@@ -4,14 +4,14 @@ export function InputValidatable(props) {
   const [invalid, setInvalid] = useState(null);
 
   const onInvalid = (event) => {
-    e.target.setCustomValidity(props.invalidMessage);
+    event.target.setCustomValidity(props.invalidMessage);
     setInvalid(true);
     if (props.onInvalid) {
       props.onInvalid(event);
     }
   }
   const onInput = (event) => {
-    e.target.setCustomValidity("");
+    event.target.setCustomValidity("");
     setInvalid(false);
     if (props.onInput) {
       props.onInput(event);
