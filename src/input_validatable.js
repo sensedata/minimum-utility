@@ -20,5 +20,7 @@ export function InputValidatable(props) {
 
   const className = `validatable ${(invalid) ? "in" : ""}valid ${props.className ?? ""}`;
 
-  return React.createElement("input", {...props, onInvalid, onInput, className});
+  let cleaned = Object.assign({}, props);
+  delete cleaned.invalidMessage;
+  return React.createElement("input", {...cleaned, onInvalid, onInput, className});
 }
